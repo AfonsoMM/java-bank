@@ -1,6 +1,6 @@
 package org.academiadecodigo.javabank.domain;
 
-public interface GeneralAccount {
+public interface GeneralAccountDebit {
 
     void withdraw();
 }

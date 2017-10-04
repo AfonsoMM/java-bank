@@ -1,9 +1,6 @@
 package org.academiadecodigo.javabank.test;
 
-import org.academiadecodigo.javabank.domain.Account;
-import org.academiadecodigo.javabank.domain.AccountType;
-import org.academiadecodigo.javabank.domain.Bank;
-import org.academiadecodigo.javabank.domain.Customer;
+import org.academiadecodigo.javabank.domain.*;
 
 public class BankTest {
 
@@ -16,15 +13,15 @@ public class BankTest {
             return false;
         }
 
-        Account a1 = new Account(1, AccountType.CHECKING);
-        Account a2 = new Account(2, AccountType.SAVINGS);
-        Account a3 = new Account(3, AccountType.CHECKING);
-        Account a4 = new Account(4, AccountType.SAVINGS);
+        CheckingsAccount a1 = new CheckingsAccount(1);
+        CheckingsAccount a2 = new CheckingsAccount(2);
+        CheckingsAccount a3 = new CheckingsAccount(3);
+        CheckingsAccount a4 = new CheckingsAccount(4);
 
         a1.credit(10);
-        a2.credit(20);
-        a3.credit(30);
-        a4.credit(40);
+        a2.credit(10);
+        a3.credit(10);
+        a4.credit(10);
 
         Customer c1 = new Customer();
         Customer c2 = new Customer();
@@ -38,7 +35,7 @@ public class BankTest {
         bank.addCustomer(c2);
 
         // bank balance should equal sum of all accounts
-        if (bank.getBalance() != 100) {
+        if (bank.getBalance() != 40) {
             return false;
         }
 

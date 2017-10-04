@@ -1,33 +1,41 @@
 package org.academiadecodigo.javabank.domain;
 
-public class Account {
+public abstract class Account {
 
-    private AccountType accountType;
-    private double balance = 0;
+    private double balance;
     private int id;
+    private AccountType accountType;
 
-    public Account(int id, AccountType accountType) {
+    public Account(int id) {
         this.id = id;
-        this.accountType = accountType;
     }
 
     public void credit(double amount) {
         balance += amount;
     }
 
-    public void debit(double amount) {
+    public boolean debit(double amount) {
         if (balance >= amount) {
             balance -= amount;
+            return true;
         }
+        return false;
     }
 
     public double getBalance() {
         return balance;
     }
 
-    public AccountType getAccountType() {
-        return accountType;
+    public void setBalance(double amount){
+        balance = amount;
     }
+
+    public AccountType getAccountType(Account account) {
+        if (account instanceof SavingsAccount){
+            return AccountType.SAVINGS;}
+        return AccountType.CHECKING;
+
+}
 
     public int getId() {
         return id;

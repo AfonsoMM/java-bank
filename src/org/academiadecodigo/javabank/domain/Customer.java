@@ -5,13 +5,19 @@ import java.util.Map;
 
 public class Customer {
 
-    public static final int MIN_SAVINGS_BALANCE = 100;
-
     private Map<Integer, Account> accounts = new HashMap<>();
 
     public void addAccount(Account account) {
         accounts.put(account.getId(), account);
     }
+
+    /*public void deleteAccount(int deleteid, int moneyid) {
+        transfer(deleteid, moneyid, accounts.get(deleteid).getBalance());
+        accounts.remove(accounts.get(deleteid));
+
+    }*/
+
+
 
     public double getBalance(int id) {
         return accounts.get(id).getBalance();
@@ -36,11 +42,9 @@ public class Customer {
 
         Account account = accounts.get(id);
 
-        if (account.getAccountType() == AccountType.SAVINGS) {
-            return;
+        if(account.getAccountType(account) != AccountType.SAVINGS) {
+            account.debit(amount);
         }
-
-        account.debit(amount);
 
     }
 
@@ -49,19 +53,10 @@ public class Customer {
         Account srcAccount = accounts.get(srcId);
         Account dstAccount = accounts.get(destId);
 
-        // if there is no balance in src account do nothing
-        if (srcAccount.getBalance() < amount) {
-            return;
+        boolean debitDone = srcAccount.debit(amount);
+        if (debitDone) {
+            dstAccount.credit(amount);
         }
-
-        // if src account is savings, we need to keep a minimum balance
-        if (srcAccount.getAccountType() == AccountType.SAVINGS &&
-                srcAccount.getBalance() < MIN_SAVINGS_BALANCE + amount) {
-            return;
-        }
-
-        srcAccount.debit(amount);
-        dstAccount.credit(amount);
 
     }
 
