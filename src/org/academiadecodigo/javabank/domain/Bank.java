@@ -7,6 +7,7 @@ import java.util.Set;
 
 public class Bank {
 
+    private int customerId;
     private AccountManager accountManager;
     private Set<Customer> customers = new HashSet<>();
 
@@ -29,5 +30,18 @@ public class Bank {
 
         return balance;
     }
+
+
+    public Customer getCustomer(int id) {
+
+        for(Customer customer : customers) {
+            if (customer.getCustomerId() == id) {
+                return customer;
+            }
+        }
+
+        return null;
+    }
+
 
 }
