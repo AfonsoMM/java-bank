@@ -45,4 +45,8 @@ public class Customer {
     public int getCustomerId() {
         return customerId;
     }
+
+    public Map<Integer, Account> getAccounts() {
+        return accounts;
+    }
 }
