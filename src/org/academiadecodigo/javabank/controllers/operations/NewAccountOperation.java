@@ -1,6 +1,6 @@
 package org.academiadecodigo.javabank.application.operations;
 
-import org.academiadecodigo.javabank.application.BankApplication;
+import org.academiadecodigo.javabank.view.BankApplication;
 import org.academiadecodigo.javabank.application.Messages;
 import org.academiadecodigo.javabank.domain.account.AccountType;
 
