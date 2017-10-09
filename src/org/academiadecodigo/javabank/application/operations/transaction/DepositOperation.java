@@ -1,10 +1,10 @@
-package org.academiadecodigo.javabank.application.operations.transaction;
+package org.academiadecodigo.javabank.controllers.operations.transaction;
 
 import org.academiadecodigo.javabank.view.BankApplication;
 
-public class WithdrawOperation extends AbstractAccountTransactionOperation {
+public class DepositOperation extends AbstractAccountTransactionOperation {
 
-    public WithdrawOperation(BankApplication bankApplication) {
+    public DepositOperation(BankApplication bankApplication) {
         super(bankApplication);
     }
 
@@ -21,7 +21,7 @@ public class WithdrawOperation extends AbstractAccountTransactionOperation {
         Double amount = scanAmount();
 
         if (customer.getAccountIds().contains(accountId)) {
-            accountManager.withdraw(accountId, amount);
+            accountManager.deposit(accountId, amount);
         }
     }
 }

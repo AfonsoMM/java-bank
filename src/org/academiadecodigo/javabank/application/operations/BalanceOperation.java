@@ -1,8 +1,8 @@
-package org.academiadecodigo.javabank.application.operations;
+package org.academiadecodigo.javabank.controllers.operations;
 
 import org.academiadecodigo.javabank.view.BankApplication;
-import org.academiadecodigo.javabank.application.Messages;
-import org.academiadecodigo.javabank.domain.account.Account;
+import org.academiadecodigo.javabank.utils.Messages;
+import org.academiadecodigo.javabank.models.account.Account;
 
 import java.text.DecimalFormat;
 import java.util.Set;
