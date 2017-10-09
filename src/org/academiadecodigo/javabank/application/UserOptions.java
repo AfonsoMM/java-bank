@@ -1,6 +1,4 @@
-package org.academiadecodigo.javabank.view;
-
-import org.academiadecodigo.javabank.utils.Messages;
+package org.academiadecodigo.javabank.application;
 
 public enum  UserOptions {
 

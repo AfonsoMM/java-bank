@@ -1,4 +1,4 @@
-package org.academiadecodigo.javabank.controllers.operations;
+package org.academiadecodigo.javabank.application.operations;
 
 public interface Operation {
 

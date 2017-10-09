@@ -1,6 +1,6 @@
-package org.academiadecodigo.javabank.models;
+package org.academiadecodigo.javabank.domain;
 
-import org.academiadecodigo.javabank.models.managers.AccountManager;
+import org.academiadecodigo.javabank.managers.AccountManager;
 
 import java.util.HashMap;
 import java.util.Set;
@@ -9,6 +9,7 @@ public class Bank {
 
     private AccountManager accountManager;
     private HashMap<Integer, Customer> customers;
+    private Customer customer;
 
     public Bank() {
         this.customers = new HashMap<>();
@@ -40,6 +41,10 @@ public class Bank {
 
     public void setAccountManager(AccountManager accountManager) {
         this.accountManager = accountManager;
+    }
+
+    public void setAccessingCustomer(int customerId){
+        this.customer = getCustomer(customerId);
     }
 
     public AccountManager getAccountManager() {

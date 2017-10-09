@@ -30,7 +30,7 @@ public class BankApplication {
         mainMenu = buildMainMenu();
 
         acessingCustomerId = scanCustomerId();
-        operationsMap = buildOperationsMap();
+        //operationsMap = buildOperationsMap();
         menuLoop();
 
     }
@@ -67,7 +67,7 @@ public class BankApplication {
 
     }
 
-    private Map<Integer, Operation> buildOperationsMap() {
+    /*private Map<Integer, Operation> buildOperationsMap() {
 
         Map<Integer, Operation> map = new HashMap<>();
         map.put(UserOptions.GET_BALANCE.getOption(), new BalanceOperation(this));
@@ -75,9 +75,9 @@ public class BankApplication {
         map.put(UserOptions.WITHDRAW.getOption(), new WithdrawOperation(this));
         map.put(UserOptions.OPEN_ACCOUNT.getOption(), new NewAccountOperation(this));
 
-        return map;
+        return map;*/
 
-    }
+    //}
 
     public int getAcessingCustomerId() {
         return acessingCustomerId;

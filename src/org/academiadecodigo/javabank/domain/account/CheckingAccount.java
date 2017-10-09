@@ -1,4 +1,4 @@
-package org.academiadecodigo.javabank.models.account;
+package org.academiadecodigo.javabank.domain.account;
 
 public class CheckingAccount extends AbstractAccount {
 

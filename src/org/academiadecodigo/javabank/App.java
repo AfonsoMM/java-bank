@@ -8,7 +8,7 @@ import org.academiadecodigo.javabank.managers.AccountManager;
 public class App {
 
     public static void main(String[] args) {
-
+/*
         Bank bank = new Bank();
         AccountManager accountManager = new AccountManager();
         bank.setAccountManager(accountManager);
@@ -21,6 +21,6 @@ public class App {
         bank.addCustomer(c3);
 
         BankApplication bankApplication = new BankApplication(bank);
-        bankApplication.start();
+        bankApplication.start();*/
     }
 }
